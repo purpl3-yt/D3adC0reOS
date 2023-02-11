@@ -1,0 +1,42 @@
+.preloader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-top: -22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(39, 39, 39, 0.7);
+  backdrop-filter: blur(0.7rem);
+  z-index: 100;
+  transition: 0.3s opacity;
+  opacity: 1;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 7px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spinner 0.7s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+  backdrop-filter: blur(0rem);
+}
+
+.loaded .preloader {
+  display: none;
+  opacity: 0;
+}

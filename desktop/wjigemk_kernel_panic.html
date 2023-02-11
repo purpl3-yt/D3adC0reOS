@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?</title>
+</head>
+<style>
+body {
+    background-image: url('https://i.pinimg.com/originals/0a/f9/7e/0af97e9c0678ff6e32ee7609c5dd8ace.gif');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+</style>
+<script>
+function kernel_panic_check() {
+    var kernel_panic = document.cookie.replace(/(?:(?:^|.*;\s*)kernel_panic\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    if (kernel_panic != "1") {
+        window.location.replace("/desktop");//redirect to kernel panic page
+    }
+}
+document.addEventListener("DOMContentLoaded", kernel_panic_check);
+</script>
+<body>
+    
+</body>
+</html>
