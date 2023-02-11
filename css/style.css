@@ -86,8 +86,8 @@ body {
     left: 0.5rem;
     height: 24rem;
     width: 20rem;
-    padding-bottom: 0.6rem;
-    border-radius: 12px;
+    padding-bottom: 0.5rem;
+    border-radius: 20px;
     color: white;
     user-select: none;
     -webkit-user-select: none;
@@ -97,15 +97,15 @@ body {
 }
 
 .menuuser {
-    margin-left: 0.5rem;
+    margin-left: 0.45rem;
     margin-top: 22rem;
     background-color: rgba(255, 255, 255, 0.03);
     padding: 0.2rem;
     padding-left: 0.4rem;
     padding-bottom: 0.1rem;
-    border-radius: 8px;
+    border-radius: 8rem;
     width: 4rem;
-    transition: 0.2s;
+    transition: 0.23s;
 }
 
 .menuuser:hover {
@@ -121,7 +121,7 @@ body {
     top: 2.5rem;
     opacity: 1;
     visibility: visible;
-    transition: 0.3s;
+    transition: 0.23s;
     filter: blur(0rem);
     z-index: 99;
 }
@@ -129,15 +129,15 @@ body {
     top: 1.25rem;
     opacity: 0;
     visibility: hidden;
-    transition: 0.3s;
+    transition: 0.23s;
     filter: blur(0.5rem);
     z-index: 99;
 }
 .rebbutton {
     background-color: rgba(255, 255, 255, 0.03);
     padding: 0.2rem;
-    border-radius: 8px;
-    transition: 0.2s;
+    border-radius: 8rem;
+    transition: 0.23s;
 }
 
 .rebbutton:hover {
@@ -152,7 +152,7 @@ body {
 
 #pinneddiv {
     background-color: rgba(255, 255, 255, 0.02);
-    border-radius: 7px;
+    border-radius: 11px;
     margin-top: -24.5rem;
     margin-left: 0.5rem;
     width: min-content;
@@ -174,7 +174,7 @@ body {
     padding: 0.1rem;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 4px;
-    transition: 0.2s;
+    transition: 0.23s;
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
@@ -184,13 +184,13 @@ body {
 .appicon:hover {
     background-color: rgba(255, 255, 255, 0.03);
     transform: scale(1.05);
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .appicon:active {
     background-color: rgba(255, 255, 255, 0.03);
     transform: scale(0.93);
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 .appwindow {
@@ -200,7 +200,7 @@ body {
     backdrop-filter: blur(0.7rem);
     margin-top: 3rem;
     margin-left: 1.5rem;
-    border-radius: 8px;
+    border-radius: 14px;
     border: 2px solid rgb(39, 39, 39);
     box-shadow: 0 0 2rem rgb(0 0 0 / 30%);
 }
@@ -210,9 +210,9 @@ body {
     height: 24rem;
     background-color: rgb(39, 39, 39, 0.7);
     backdrop-filter: blur(0.7rem);
-    margin-top: 3rem;
+    margin-top: 4rem;
     margin-left: 1.5rem;
-    border-radius: 8px;
+    border-radius: 14px;
     border: 2px solid rgb(39, 39, 39);
 }
 
@@ -223,7 +223,7 @@ body {
     backdrop-filter: blur(0.7rem);
     margin-top: -25rem;
     margin-left: 3.5rem;
-    border-radius: 8px;
+    border-radius: 14px;
     border: 2px solid rgb(39, 39, 39);
 }
 #topbar_window_justice {
@@ -232,7 +232,43 @@ body {
     padding: 0.3rem;
     padding-left: 0;
     padding-right: 0;
-    border-radius: 8px 8px 0 0;
+    border-radius: 14px 14px 0 0;
+}
+
+#appwindow_settings {
+    width: 32rem;
+    height: 24rem;
+    background-color: rgb(39, 39, 39, 0.7);
+    backdrop-filter: blur(0.7rem);
+    margin-top: -26rem;
+    margin-left: 1.5rem;
+    border-radius: 14px;
+    border: 2px solid rgb(39, 39, 39);
+}
+#topbar_window_settings {
+    background-color: rgb(39, 39, 39);
+    width: 32rem;
+    padding: 0.3rem;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 14px 14px 0 0;
+}
+.closebtn_window_settings {
+    float: right;
+    color: #ffffff00;
+    font-size: 1.3rem;
+    background-color: rgb(187, 0, 0);
+    padding: 0.3rem;
+    height: 1.5rem;
+    border-radius: 3rem;
+    transition: 0.5s;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    transform: scale(0.4);
+    margin-top: -1.7rem;
+    margin-right: -0.3rem;
 }
 
 #topbar_window {
@@ -241,7 +277,7 @@ body {
     padding: 0.3rem;
     padding-left: 0;
     padding-right: 0;
-    border-radius: 8px 8px 0 0;
+    border-radius: 14px 14px 0 0;
 }
 
 .appname_window {
@@ -252,7 +288,6 @@ body {
 .closebtn_window {
     float: right;
     color: #ffffff00;
-    transform: rotate(0deg);
     font-size: 1.3rem;
     background-color: rgb(187, 0, 0);
     padding: 0.3rem;
@@ -276,7 +311,6 @@ body {
 .closebtn_window_justice {
     float: right;
     color: #ffffff00;
-    transform: rotate(0deg);
     font-size: 1.3rem;
     background-color: rgb(187, 0, 0);
     padding: 0.3rem;
