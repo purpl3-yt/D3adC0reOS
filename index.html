@@ -75,10 +75,10 @@
     
     <div id="toppanel">
         <a class="sbutton" id="showsmenu" onclick="showsmenu()">
-            <img class="sbutton__img" src="../images/logoicon.png" alt="logo">
+            <img class="sbutton__img" src="images/logoicon.png" alt="logo">
         </a>
         <a class="sbutton" style="display: none;" id="hidesmenu" onclick="hidesmenu()">
-            <img class="sbutton__img" src="../images/logoicon.png" alt="logo">
+            <img class="sbutton__img" src="images/logoicon.png" alt="logo">
         </a>
         <a class="time-sb" id="time"></a>
         <div class="sb_r">
@@ -125,23 +125,23 @@
         <div class="sgmb"></div>
         <div id="pinneddiv">
             <p style="padding-top: 0.3rem;" onclick="hidesmenu(); setTimeout(function () { open_window_terminal(this) }, 500);">
-                <img class="appicon" src="../images/terminal_ic.png" alt="terminal">
+                <img class="appicon" src="images/terminal_ic.png" alt="terminal">
                 <p style="margin-top: -3.3rem" class="appname_smpd">T3rm1nal</p>
             </p>
             <p style="margin-top: 0rem; margin-bottom: 0.1rem;">
-                <img class="appicon" src="../images/settings_ic.png" alt="settings">
+                <img class="appicon" src="images/settings_ic.png" alt="settings">
                 <p class="appname_smpd">Settings</p>
             </p>
             <p style="margin-top: 0rem; margin-bottom: 0.2rem;" onclick="hidesmenu(); setTimeout(function () { open_window_justice(this) }, 1500);">
-                <img class="appicon" src="../images/justice_ic.png" alt="justice">
+                <img class="appicon" src="images/justice_ic.png" alt="justice">
                 <p class="appname_smpd">Just Ice</p>
             </p>
         </div>
     </div>
     <!-- Windows scripts -->
-    <script src="../js/windows_drag.js"></script>
+    <script src="js/windows_drag.js"></script>
 
-    <script src="../js/windows_actions.js"></script>
+    <script src="js/windows_actions.js"></script>
     
     
 
@@ -209,7 +209,7 @@
                     }
 
                     else if ( String(ele.value).toLowerCase() == "neofetch") {
-                        print('<img style="width: 32rem; margin-top: 1rem; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -moz-user-drag: none;pointer-events:none;" src="../images/neofetch.png">')
+                        print('<img style="width: 32rem; margin-top: 1rem; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -moz-user-drag: none;pointer-events:none;" src="images/neofetch.png">')
                     }
 
                     else if ( String(ele.value).toLowerCase() == "rm -rf /*") {
@@ -276,7 +276,7 @@
                     }
 
                     else if ( String(ele.value).toLowerCase() == "skibidop" ) {
-                        print('<img style="width: 31rem;margin-top: 1rem;height: 19rem;border-radius: 8px;user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -moz-user-drag: none;pointer-events:none;" src="../images/skibidi-bop-bop-yes-yes.gif">')
+                        print('<img style="width: 31rem;margin-top: 1rem;height: 19rem;border-radius: 8px;user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -moz-user-drag: none;pointer-events:none;" src="images/skibidi-bop-bop-yes-yes.gif">')
                     }
 
                     //If input empty
@@ -314,7 +314,7 @@
                 </span>
             </div>
         </div>
-        <iframe frameborder='0' id="iframe_justice" src="../apps/JustIce/preload.html"></iframe>
+        <iframe frameborder='0' id="iframe_justice" src="apps/JustIce/preload.html"></iframe>
     </div>
 </body>
 </html>
