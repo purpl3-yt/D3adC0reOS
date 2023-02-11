@@ -1,12 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/preloader.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="shortcut icon" href="../images/logoicon.png" type="image">
+    <title id="pgtitle">D3adC0re OS</title>
 </head>
-<body>
-    <h1>D3adC0re OS soon!</h1>
+<body oncontextmenu="return false;" id="body"><!-- Return false on context menu-->
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            document.body.classList.add('loaded_hiding');
+            window.setTimeout(function () {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, 500);
+        }
+    </script>
+
+    <!-- Fully disable Context Menu -->
+    <script>
+        window.addEventListener(`contextmenu`, (e) => e.preventDefault());// Ignore all contextmenu events
+    </script>
+
+    <script language="javascript">
+        document.onmousedown=disableRightclick;
+        function disableRightclick(event)
+        {
+          if(event.button==2)//If pressed rmb return it
+           {
+             return false;    
+           }
+        }
+    </script>
+    <!-- End -->
+
+    <!-- Show/Hide menu scripts-->
+    <script>
+        function showsmenu() {
+            document.getElementById('hidesmenu').style.display = "block";
+            document.getElementById('showsmenu').style.display = "none";
+            document.getElementById('smenu').classList.add('smshow');
+            document.getElementById('smenu').classList.remove('smhide');
+        }
+        function hidesmenu() {
+            document.getElementById('showsmenu').style.display = "block";
+            document.getElementById('hidesmenu').style.display = "none";
+            document.getElementById('smenu').classList.remove('smshow');
+            document.getElementById('smenu').classList.add('smhide');
+        }
+    </script>
+    <!-- Check cookie "kernel_panic" -->
+
+    <script>
+        function kernel_panic_check() {
+            var kernel_panic = document.cookie.replace(/(?:(?:^|.*;\s*)kernel_panic\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+            if (kernel_panic == "1") {//if cookie "kernel_panic" == 1 than redirect to page
+                window.location.replace("/desktop/wjigemk_kernel_panic.html");//redirect to kernel panic page
+            }
+        }
+        document.addEventListener("DOMContentLoaded", kernel_panic_check);
+    </script>
+    
+    <div id="toppanel">
+        <a class="sbutton" id="showsmenu" onclick="showsmenu()">
+            <img class="sbutton__img" src="../images/logoicon.png" alt="logo">
+        </a>
+        <a class="sbutton" style="display: none;" id="hidesmenu" onclick="hidesmenu()">
+            <img class="sbutton__img" src="../images/logoicon.png" alt="logo">
+        </a>
+        <a class="time-sb" id="time"></a>
+        <div class="sb_r">
+            <span class="material-symbols-outlined">
+                signal_cellular_nodata
+            </span>
+            <span class="material-symbols-outlined">
+                signal_wifi_4_bar
+            </span>
+            <span class="material-symbols-outlined">
+                battery_charging_full
+            </span>
+        </div>
+    </div>
+    <!--hi pupsik purpsh'-->
+    <script>
+        function changetime() {
+
+            const date = new Date();
+            document.getElementById('time').innerHTML = date.toLocaleTimeString('ru-RU');
+        }                                  //by Purpl3
+        changetime()
+        setInterval(function () {
+            changetime();
+        },1000)
+    </script>
+
+    <!-- Menu -->
+    <div id="smenu" class="smhide">
+        <p class="menuuser" title="Default live user">
+            <span class="material-symbols-outlined">
+                person
+            </span>
+            <p style="font-family: PixelOperatorBold; margin-top: -2.67rem; margin-left: 2.5rem;">
+                Us3r
+            </p>
+        </p>
+        <p class="actionbuttons">
+            <span style="cursor: pointer" title="Restart" onclick="window.location.reload();" class="material-symbols-outlined rebbutton">
+                restart_alt
+            </span>  
+        </p>
+
+        <div class="sgmb"></div>
+        <div id="pinneddiv">
+            <p style="padding-top: 0.3rem;" onclick="hidesmenu(); setTimeout(function () { open_window_terminal(this) }, 500);">
+                <img class="appicon" src="../images/terminal_ic.png" alt="terminal">
+                <p style="margin-top: -3.3rem" class="appname_smpd">T3rm1nal</p>
+            </p>
+            <p style="margin-top: 0rem; margin-bottom: 0.1rem;">
+                <img class="appicon" src="../images/settings_ic.png" alt="settings">
+                <p class="appname_smpd">Settings</p>
+            </p>
+            <p style="margin-top: 0rem; margin-bottom: 0.2rem;" onclick="hidesmenu(); setTimeout(function () { open_window_justice(this) }, 1500);">
+                <img class="appicon" src="../images/justice_ic.png" alt="justice">
+                <p class="appname_smpd">Just Ice</p>
+            </p>
+        </div>
+    </div>
+    <!-- Windows scripts -->
+    <script src="../js/windows_drag.js"></script>
+
+    <script src="../js/windows_actions.js"></script>
+    
+    
+
+    <div id="appwindow_terminal" class="appwindow appwindow_hidden">
+        <div id="topbar_window" onmouseenter="topbar_enter()" onmouseleave="topbar_leave()">
+            <div class="appname_window" style="user-select: none;" id="topbar_window_terminal">
+                T3rm1nal
+            </div>
+            <div class="closebtn_window" onclick="close_window_terminal()">
+                <span style="cursor: pointer" class="material-symbols-outlined">
+                    close
+                </span>
+            </div>
+        </div>
+        <p style="color: white;user-select: none;-webkit-user-select: none;-webkit-user-drag: none;margin-top: 5px;margin-bottom: 5px;">
+            [us3r@d3adc0reos]: $ <input autofocus style="font-family: PixelOperatorBold; font-size: 1rem; color: white; outline: none; border: none; background: none; width: 21rem;" type="text" name="" maxlength="42" id="terminal-input" onkeydown="terminal_check(this)">
+        </p>
+        <p id="terminal_output" style="color:white; margin-top: -0.5rem; margin-left: 0.1rem;"></p>
+        <!-- Terminal script -->
+        <script>
+            function terminal_check(ele) {
+                if(event.key === 'Enter') {
+
+                    function get_args(text) {//Get args from command
+                        return String(text).toLowerCase().split(" ").slice(1)
+                    }
+
+                    function print(text) {
+                        output.innerHTML = text;
+                    }
+                    //List of commands
+                    const dict = {
+                        'help': 'return list of commands!',
+                        'whoami': "print effective user name",
+                        "rm -rf /*": "remove all files and directories",
+                        "ls": "list directory contents",
+                        "sudo": "execute a command as superuser",
+                        "math": "calculate expressions",
+                        "neofetch": "system info",
+                        "clear": "clear cmd",
+                        "exit": "close terminal",
+                        "justice": "open Just Ice app",
+                        "skibidop": "yes yes..",
+                    };
+                    //Define output tag
+                    output = document.getElementById("terminal_output")
+                    
+                    //Help command that return list with commands
+                    if ( String(ele.value).toLowerCase() == "help") {
+                        var help_text = [];
+                        for(var key in dict) {
+                            var value = dict[key];
+                            help_text.push(key+" - "+dict[key]);
+                        }
+
+                        print(help_text.join('</br>'))
+                    }
+                    //Easter egg command
+                    else if ( String(ele.value).toLowerCase() == "d3adc0re" ) {
+                        print("hi, <a style='color: white;' target='_blank' href='https://t.me/d3adc0re'>https://t.me/d3adc0re</a>");
+                    }
+
+                    else if ( String(ele.value).toLowerCase() == "whoami") {
+                        print("us3r");
+                    }
+
+                    else if ( String(ele.value).toLowerCase() == "neofetch") {
+                        print('<img style="width: 32rem; margin-top: 1rem; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -moz-user-drag: none;pointer-events:none;" src="../images/neofetch.png">')
+                    }
+
+                    else if ( String(ele.value).toLowerCase() == "rm -rf /*") {
+                        //Disable css
+                        for ( i=0; i<document.styleSheets.length; i++) {
+                            void(document.styleSheets.item(i).disabled=true);                           
+                        }
+                        //Wait 1 sec
+                        setTimeout(function () {}, 1000);
+
+                        //Make page hidden
+                        document.getElementById("body").style.display = "none";
+                        
+                        //Add cookie
+                        document.cookie = "kernel_panic=1";
+                        
+                        //Redirect to kernel_panic page
+                        window.location.replace("/desktop/wjigemk_kernel_panic.html");//redirect to kernel panic page
+                    }
+
+                    else if ( String(ele.value).toLowerCase() == "ls") {
+                        var folders = ["Documents", "Music", "Public", "Templates","Desktop", "Downloads", "Pictures", "Videos"];
+                        //Print all folders
+                        print(folders.join(' '));
+                    }
+                    
+                    else if ( String(ele.value).toLowerCase().startsWith("math") ) {
+                        args = get_args(ele.value)
+                        if (args.length == 0) {
+                            output.innerHTML = 'Enter an number 1!'
+                            return null;
+                        }
+
+                        else if (args.length == 1) {
+                            output.innerHTML = "Enter an operator!";
+                            return null;
+                        }
+                        
+                        if (args[2] == undefined) {
+                            output.innerHTML = "Enter an number 2!";
+                            return null;
+                        }
+
+
+
+                        num1 = args[0]
+
+                        operator = args[1]
+                        
+                        num2 = args[2]
+
+                        print(num1+' '+operator+' '+num2+" = "+eval(num1+operator+num2))
+                    }
+
+                    else if ( String(ele.value).toLowerCase() == "exit" ) {
+                        close_window_terminal()
+                        print('');
+                    }
+
+                    else if ( String(ele.value).toLowerCase() == 'justice' ) {
+                        setTimeout(() => {  open_window_justice(); }, 1500);
+                        print('Successfully launched "Just Ice" app.');
+                        ele.value = '';
+                    }
+
+                    else if ( String(ele.value).toLowerCase() == "skibidop" ) {
+                        print('<img style="width: 31rem;margin-top: 1rem;height: 19rem;border-radius: 8px;user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -moz-user-drag: none;pointer-events:none;" src="../images/skibidi-bop-bop-yes-yes.gif">')
+                    }
+
+                    //If input empty
+                    else if ( String(ele.value).toLowerCase() == 'clear' ) {
+                        print('');
+                    }
+
+                    //If input empty
+                    else if ( String(ele.value).toLowerCase() == '' ) {
+                        print('');
+                    }
+                    
+                    else {
+                        print('Command: "'+ele.value+'" not found!<br>Enter "help" for list of commands!');
+                    }
+
+                    document.getElementById("topbar_window_terminal").innerHTML = "T3rm1nal - "+String(ele.value).toLowerCase();
+                    document.getElementById("pgtitle").innerHTML = "D3adC0re OS - T3rm1nal - "+String(ele.value).toLowerCase();
+
+                    //Remove text from input
+                    ele.value = "";
+                }
+            }
+        </script>
+    </div>
+
+    <div id="appwindow_justice" class="appwindow appwindow_hidden">
+        <div id="topbar_window_justice" onmouseenter="topbar_enter_justice()" onmouseleave="topbar_leave_justice()">
+            <div class="appname_window" style="user-select: none;">
+                Just Ice
+            </div>
+            <div class="closebtn_window_justice" onclick="close_window_justice()">
+                <span style="cursor: pointer" class="material-symbols-outlined">
+                    close
+                </span>
+            </div>
+        </div>
+        <iframe frameborder='0' id="iframe_justice" src="../apps/JustIce/preload.html"></iframe>
+    </div>
 </body>
 </html>
