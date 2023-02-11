@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/preloader.css">
+    <!-- Jquery scripts -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Global scripts -->
     <script src="js/global.js"></script>
+    <!-- Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <!-- OS icon -->
     <link rel="shortcut icon" href="images/logoicon.png" type="image">
+    <!-- Page title -->
     <title id="pgtitle">D3adC0re OS</title>
 </head>
 <body oncontextmenu="return false;" id="body"><!-- Return false on context menu-->
@@ -201,7 +206,7 @@
     </div>
 
     <div id="appwindow_justice" class="appwindow appwindow_hidden">
-        <div id="topbar_window_justice" onmouseenter="topbar_enter_justice()" onmouseleave="topbar_leave_justice()">
+        <div id="topbar_window_justice" onmouseenter="topbar_enter_justice()" onmouseleave="topbar_leave_justice()" style="z-index: 10;">
             <div class="appname_window" style="user-select: none;">
                 Just Ice
             </div>
@@ -211,7 +216,7 @@
                 </span>
             </div>
         </div>
-        <iframe frameborder='0' id="iframe_justice" src="apps/JustIce/preload.html"></iframe>
+        <iframe frameborder='0' id="iframe_justice" src="apps/JustIce/preload.html" style="z-index: -1;"></iframe>
     </div>
 
     <div id="appwindow_settings" class="appwindow appwindow_hidden">
