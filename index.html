@@ -183,6 +183,9 @@
                 if (getCookie("user") != undefined) {
                     document.getElementById("terminal_input").innerHTML = "["+getCookie("user")+"@d3adc0reos]: $"+ ' <input autofocus style="font-family: PixelOperatorBold; font-size: 1rem; color: white; outline: none; border: none; background: none; width: 21rem;" type="text" name="" maxlength="42" id="terminal-input" onkeydown="terminal_check(this)">'
                 }
+                else if (getCookie("user") == undefined) {
+                    document.cookie = "user=us3r";
+                }
             }
 
             document.addEventListener("DOMContentLoaded", terminal_set_user);
