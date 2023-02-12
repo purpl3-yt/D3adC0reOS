@@ -182,21 +182,6 @@
         <!-- Terminal system -->
         <script src="js/terminal_system.js"></script>
         <!-- Terminal input -->
-
-        <script>
-            function terminal_set_user() {
-                if (getCookie("user") != undefined) {
-                    document.getElementById("terminal_input").innerHTML = "["+getCookie("user")+"@d3adc0reos]: $"+ ' <input autofocus style="font-family: PixelOperatorBold; font-size: 1rem; color: white; outline: none; border: none; background: none; width: 21rem;" type="text" name="" maxlength="42" id="terminal-input" onkeydown="terminal_check(this)">'
-                }
-                else if (getCookie("user") == undefined) {
-                    document.cookie = "user=us3r";
-                }
-            }
-
-            document.addEventListener("DOMContentLoaded", terminal_set_user);
-
-        </script>
-
         <p style="color: white;user-select: none;-webkit-user-select: none;-webkit-user-drag: none;margin-top: 5px;margin-bottom: 5px;" id="terminal_input">
             [us3r@d3adc0reos]: $ <input autofocus style="font-family: PixelOperatorBold; font-size: 1rem; color: white; outline: none; border: none; background: none; width: 21rem;" type="text" name="" maxlength="42" id="terminal-input" onkeydown="terminal_check(this)">
         </p>

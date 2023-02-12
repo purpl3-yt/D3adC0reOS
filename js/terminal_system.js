@@ -23,7 +23,7 @@ function terminal_check(ele) {
         }
         
         //List of commands
-        const dict = {
+        const commands = {
             'help': 'return list of commands!',
             'whoami': "print effective user name",
             "rm -rf /*": "remove all files and directories",
@@ -37,20 +37,18 @@ function terminal_check(ele) {
             "skibididop": "u know it",
             "justice": "open Just Ice app",
             "settings": "open system preferences",
+            "changelog": "print all changes for last version"
         
         };
         //Define output tag
         output = document.getElementById("terminal_output")
-        
-        //Set terminal input user as "user" cookie
-        document.getElementById("terminal_input").innerHTML = "["+getCookie("user")+"@d3adc0reos]: $"+' <input autofocus style="font-family: PixelOperatorBold; font-size: 1rem; color: white; outline: none; border: none; background: none; width: 21rem;" type="text" name="" maxlength="42" id="terminal-input" onkeydown="terminal_check(this)">'
-            
+   
         //Help command that return list with commands
         if (command("help")) {
             var help_text = [];
-            for(var key in dict) {
-                var value = dict[key];
-                help_text.push(key+" - "+dict[key]);
+            for(var key in commands) {
+                var value = commands[key];
+                help_text.push(key+" - "+commands[key]);
             }
 
             print(help_text.join('</br>'))
@@ -84,7 +82,7 @@ function terminal_check(ele) {
             document.cookie = "kernel_panic=1";
             
             //Redirect to kernel_panic page
-            window.location.replace("/desktop/wjigemk_kernel_panic.html");//redirect to kernel panic page
+            window.location.replace("desktop/wjigemk_kernel_panic.html");//redirect to kernel panic page
         }
 
         else if (command("ls")) {
@@ -148,19 +146,15 @@ function terminal_check(ele) {
             ele.value = '';
         }
 
-        else if (command("user")) {
-            args = get_args(ele.value)
-
-            if (args[0] == undefined) {
-                print('Enter a new user!');
-                return null;
+        else if (command("changelog")) {
+            print_changelog = [];
+            for(var key in changelog) {
+                var value = changelog[key];
+                print_changelog.push("["+value+"] "+key)
             }
 
-            //Set cookie user
-            document.cookie = "user="+String(args[0]);
+            print(print_changelog.join("\n"))
 
-            //Set terminal input user as "user" cookie
-            document.getElementById("terminal_input").innerHTML = "["+getCookie("user")+"@d3adc0reos]: $"
             
         }
 

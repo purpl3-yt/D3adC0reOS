@@ -14,11 +14,12 @@ body {
     background-size: 80%;
 }
 </style>
+<script src="../js/global.js"></script>
 <script>
 function kernel_panic_check() {
-    var kernel_panic = document.cookie.replace(/(?:(?:^|.*;\s*)kernel_panic\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    if (kernel_panic != "1") {
-        window.location.replace("/desktop");//redirect to kernel panic page
+    var kernel_panic = getCookie("kernel_panic")
+    if (String(kernel_panic) != "1") {
+        window.location.replace("../");//redirect to kernel panic page
     }
 }
 document.addEventListener("DOMContentLoaded", kernel_panic_check);
