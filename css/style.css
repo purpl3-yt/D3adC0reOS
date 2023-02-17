@@ -46,7 +46,7 @@ body {
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
-    z-index: 101;
+    z-index: 111111;
 }
 
 .sbutton {
@@ -57,6 +57,11 @@ body {
     -webkit-user-select: none;
     -webkit-user-drag: none;
     cursor: pointer;
+    transition: 0.1s;
+}
+
+.sbutton:active {
+    transform: scale(1.1);
 }
 
 .sbutton__img {
@@ -285,6 +290,11 @@ body {
     color: white;
 }
 
+.appname_window_settings {
+    text-align: center;
+    color: white;
+}
+
 .closebtn_window {
     float: right;
     color: #ffffff00;
@@ -352,5 +362,155 @@ body {
     width: 36rem;
     height: 26.36rem;
     margin-top: -0.85rem;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 12px 12px;
+}
+
+.settings_element_default {
+    width: 92%;
+    background-color: rgba(255, 255, 255, 0.03);
+    margin-top: 0.6rem;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 12px;
+    padding: 0.8rem;
+    color: white;
+    text-align: center;
+    height: 3.8rem;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.settings_element_default:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.settings_element_default:active {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.settings_element_thin {
+    width: 92%;
+    background-color: rgba(255, 255, 255, 0.03);
+    margin-top: 0.6rem;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 12px;
+    padding: 0.8rem;
+    color: white;
+    text-align: center;
+    height: 2.4rem;
+    padding-top: 0.1rem;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.settings_element_thin:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.settings_element_thin:active {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#restart_confirm {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition-property: backdrop-filter;
+}
+
+.restart_confirm_hidden {
+    visibility: hidden;
+    transition: 0.23s;
+    transition-property: backdrop-filter;
+    z-index: -180;
+    backdrop-filter: blur(0rem);
+}
+
+.restart_confirm_shown {
+    visibility: visible;
+    transition: 0.23s;
+    transition-property: backdrop-filter;
+    z-index: 1807584960543;
+    backdrop-filter: blur(0.7rem);
+}
+
+#r-c_elem {
+    display: table-cell;
+    vertical-align: middle;
+}
+.inner_rce {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20rem;
+    height: 7rem;
+    background-color: rgba(39, 39, 39, 0.7);
+    border-radius: 1.4rem;
+    backdrop-filter: blur(0.7rem);
+    color: white;
+    border: 2px solid rgb(39, 39, 39);
+    box-shadow: 0 0 2rem rgb(0 0 0 / 30%);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.irce_shown {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.23s;
+    transition-property: opacity, transform, visibility, filter;
+    filter: blur(0rem);
+    transform: scale(1.0);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.irce_hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.23s;
+    transition-property: opacity, transform, visibility, filter;
+    filter: blur(0.2rem);
+    transform: scale(0.9);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.irce_buttons_div {
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.irce_button {
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    height: 2.5rem;
+    width: 9.3rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: white;
+    font-family: PixelOperatorBold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.irce_button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.irce_button:active {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.irce_text {
+    text-align: center;
+    margin-top: 1.5rem;
 }
