@@ -128,6 +128,7 @@ function terminal_check(ele) {
         else if (command("exit")) {
             close_window_terminal()
             print('');
+            setTimeout(() => { document.getElementById("pgtitle").innerHTML = "D3adC0re OS"; }, 200);
         }
 
         else if (command("justice")) {
@@ -153,9 +154,7 @@ function terminal_check(ele) {
                 print_changelog.push("["+value+"] "+key)
             }
 
-            print(print_changelog.join("\n"))
-
-            
+            print(print_changelog.join("<br>"))
         }
 
         //If input empty

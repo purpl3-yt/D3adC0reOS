@@ -1,220 +1,271 @@
 <!DOCTYPE html>
 <html lang="en" id="html">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/preloader.css">
-    <!-- Jquery scripts -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <!-- Global scripts -->
-    <script src="js/global.js"></script>
-    <!-- Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <!-- OS icon -->
-    <link rel="shortcut icon" href="images/logoicon.png" type="image">
-    <!-- Page title -->
-    <title id="pgtitle">D3adC0re OS</title>
-</head>
-<body oncontextmenu="return false;" id="body"><!-- Return false on context menu-->
-
-    <!-- preloader -->
-    <div class="preloader">
-        <div class="spinner"></div>
-    </div>
-
-    <script>
-        window.onload = function () {
-            document.body.classList.add('loaded_hiding');
-            window.setTimeout(function () {
-                document.body.classList.add('loaded');
-                document.body.classList.remove('loaded_hiding');
-            }, 500);
-        }
-    </script>
-
-    <!-- Restart os script -->
-    <script>
-        function restart_os() {
-            hidesmenu();
-            setTimeout(function () {
-                document.getElementById('body').style.marginTop = "-4rem";
-                document.getElementById('toppanel').style.visibility = "hidden";
-                document.getElementById('toppanel').style.transition = "1s all";
-                document.getElementById('body').style.transition = "1s filter";
-                document.getElementById('body').style.filter = "brightness(0%) blur(0.5rem)";
-                document.getElementById('body').style.backgroundImage = "none";
-            }, 1000);
-            setTimeout(function () { window.location.reload(); }, 3000);
-        }
-    </script>
-
-    <!-- Fully disable Context Menu -->
-    <script>
-        window.addEventListener(`contextmenu`, (e) => e.preventDefault());// Ignore all contextmenu events
-    </script>
-
-    <script language="javascript">
-        document.onmousedown=disableRightclick;
-        function disableRightclick(event)
-        {
-          if(event.button==2)//If pressed rmb return it
-           {
-             return false;    
-           }
-        }
-    </script>
-    <!-- End -->
-
-    <!-- Show/Hide menu scripts-->
-    <script>
-        function showsmenu() {
-            document.getElementById('hidesmenu').style.display = "block";
-            document.getElementById('showsmenu').style.display = "none";
-            document.getElementById('smenu').classList.add('smshow');
-            document.getElementById('smenu').classList.remove('smhide');
-        }
-        function hidesmenu() {
-            document.getElementById('showsmenu').style.display = "block";
-            document.getElementById('hidesmenu').style.display = "none";
-            document.getElementById('smenu').classList.remove('smshow');
-            document.getElementById('smenu').classList.add('smhide');
-        }
-    </script>
-    <!-- Check cookie "kernel_panic" -->
-
-    <script>
-        function kernel_panic_check() {
-            var kernel_panic = document.cookie.replace(/(?:(?:^|.*;\s*)kernel_panic\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            if (kernel_panic == "1") {//if cookie "kernel_panic" == 1 than redirect to page
-                window.location.replace("desktop/wjigemk_kernel_panic.html");//redirect to kernel panic page
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/preloader.css">
+        <link rel="stylesheet" href="/fonts/MaterialIcons/css2.css">
+        <!-- Jquery scripts -->
+        <script src="/js/Jquery/jquery-1.12.4.js"></script>
+        <script src="/js/Jquery/jquery-ui.js"></script>
+        <!-- Global scripts -->
+        <script src="js/global.js"></script>
+        <!-- OS icon -->
+        <link rel="shortcut icon" href="images/logoicon.png" type="image">
+        <!-- Page title -->
+        <title id="pgtitle">D3adC0re OS</title>
+    </head>
+    <body oncontextmenu="return false;" id="body"><!-- Return false on context menu-->
+        <!-- preloader -->
+        <div class="preloader">
+            <div class="spinner"></div>
+        </div>
+        <script>
+            window.onload = function () {
+                document.body.classList.add('loaded_hiding');
+                window.setTimeout(function () {
+                    document.body.classList.add('loaded');
+                    document.body.classList.remove('loaded_hiding');
+                }, 500);
             }
-        }
-        document.addEventListener("DOMContentLoaded", kernel_panic_check);
-    </script>
-    
-    <div id="toppanel">
-        <a class="sbutton" id="showsmenu" onclick="showsmenu()">
-            <img class="sbutton__img" src="images/logoicon.png" alt="logo">
-        </a>
-        <a class="sbutton" style="display: none;" id="hidesmenu" onclick="hidesmenu()">
-            <img class="sbutton__img" src="images/logoicon.png" alt="logo">
-        </a>
-        <a class="time-sb" id="time"></a>
-        <div class="sb_r">
-            <span class="material-symbols-outlined">
-                signal_cellular_nodata
-            </span>
-            <span class="material-symbols-outlined">
-                signal_wifi_4_bar
-            </span>
-            <span class="material-symbols-outlined">
-                battery_charging_full
-            </span>
-        </div>
-    </div>
+        </script>
 
-    <script>
-        function changetime() {
+        <!-- Restart OS script -->
+        <script>
+            function restart_confirm_dialog() {
+                hidesmenu();
+                setTimeout(function() {
+                    document.getElementById("restart_confirm").classList.add("restart_confirm_shown");
+                    document.getElementById("restart_confirm").classList.remove("restart_confirm_hidden");
+                    document.getElementById("r-c_elem").classList.remove("irce_hidden");
+                    document.getElementById("r-c_elem").classList.add("irce_shown");
+                }, 500)
+            }
+        </script>
+        <script>
+            function restart_cancelled() {
+                hidesmenu();
+                setTimeout(function() {
+                    document.getElementById("restart_confirm").classList.remove("restart_confirm_shown");
+                    document.getElementById("restart_confirm").classList.add("restart_confirm_hidden");
+                    document.getElementById("r-c_elem").classList.add("irce_hidden");
+                    document.getElementById("r-c_elem").classList.remove("irce_shown");
+                }, 100)
+            }
+        </script>
+        <script>
+            function restart_os() {
+                hidesmenu();
+                setTimeout(function() {
+                    document.getElementById("restart_confirm").classList.remove("restart_confirm_shown");
+                    document.getElementById("restart_confirm").classList.add("restart_confirm_hidden");
+                    document.getElementById("r-c_elem").classList.add("irce_hidden");
+                    document.getElementById("r-c_elem").classList.remove("irce_shown");
+                }, 500)
+                setTimeout(function () {
+                    document.getElementById('body').style.marginTop = "-4rem";
+                    document.getElementById('toppanel').style.visibility = "hidden";
+                    document.getElementById('toppanel').style.transition = "1s all";
+                    document.getElementById('body').style.transition = "1s filter";
+                    document.getElementById('body').style.filter = "brightness(0%) blur(0.5rem)";
+                    document.getElementById('body').style.backgroundImage = "none";
+                }, 1000);
+                setTimeout(function () { window.location.reload(); }, 3000);
+            }
+        </script>
 
-            const date = new Date();
-            document.getElementById('time').innerHTML = date.toLocaleTimeString('ru-RU');
-        }                                  //by Purpl3
-        changetime()
-        setInterval(function () {
-            changetime();
-        },1000)
-    </script>
-
-    <!-- Menu -->
-    <div id="smenu" class="smhide">
-        <p class="menuuser" title="Default live user">
-            <span class="material-symbols-outlined">
-                person
-            </span>
-            <p style="font-family: PixelOperatorBold; margin-top: -2.67rem; margin-left: 2.5rem;">
-                Us3r
-            </p>
-        </p>
-        <p class="actionbuttons">
-            <span style="cursor: pointer" title="Restart" onclick="restart_os()" class="material-symbols-outlined rebbutton">
-                restart_alt
-            </span>  
-        </p>
-
-        <div class="sgmb"></div>
-        <div id="pinneddiv">
-            <p style="padding-top: 0.32rem;" onclick="hidesmenu(); setTimeout(function () { open_window_terminal(this) }, 500);">
-                <img class="appicon" src="images/terminal_ic.png" alt="terminal">
-                <p style="margin-top: -3.3rem" class="appname_smpd">T3rm1nal</p>
-            </p>
-            <p style="margin-top: 0rem; margin-bottom: 0.1rem;" onclick="hidesmenu(); setTimeout(function () { open_window_settings(this) }, 500);">
-                <img class="appicon" src="images/settings_ic.png" alt="settings">
-                <p class="appname_smpd">Settings</p>
-            </p>
-            <p style="margin-top: 0rem; margin-bottom: 0.2rem;" onclick="hidesmenu(); setTimeout(function () { open_window_justice(this) }, 1500);">
-                <img class="appicon" src="images/justice_ic.png" alt="justice">
-                <p class="appname_smpd">Just Ice</p>
-            </p>
-        </div>
-    </div>
-    <!-- Windows scripts -->
-    <script src="js/windows_drag.js"></script>
-
-    <script src="js/windows_actions.js"></script>
-    
-    
-
-    <div id="appwindow_terminal" class="appwindow appwindow_hidden">
-        <div id="topbar_window" onmouseenter="topbar_enter()" onmouseleave="topbar_leave()">
-            <div class="appname_window" style="user-select: none;" id="topbar_window_terminal">
-                T3rm1nal
+        <div id="restart_confirm" class="restart_confirm_hidden">
+            <div id="r-c_elem" class="irce_hidden">
+                <div class="inner_rce">
+                    <p class="irce_text">
+                        Are you sure want to restart?
+                    </p>
+                    <div class="irce_buttons_div">
+                        <button class="irce_button" onclick="restart_cancelled()">
+                            Cancel
+                        </button>
+                        <button class="irce_button" onclick="restart_os()">
+                            Restart
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="closebtn_window" onclick="close_window_terminal()">
-                <span style="cursor: pointer" class="material-symbols-outlined">
-                    close
+        </div>
+
+        <!-- Fully disable Context Menu -->
+        <script>
+            window.addEventListener(`contextmenu`, (e) => e.preventDefault());// Ignore all contextmenu events
+        </script>
+
+        <script language="javascript">
+            document.onmousedown=disableRightclick;
+            function disableRightclick(event)
+            {
+              if(event.button==2)//If context menu return it
+               {
+                 return false;    
+               }
+            }
+        </script>
+        <!-- End -->
+
+        <!-- Show/Hide menu scripts-->
+        <script>
+            function showsmenu() {
+                document.getElementById('hidesmenu').style.display = "block";
+                document.getElementById('showsmenu').style.display = "none";
+                document.getElementById('smenu').classList.add('smshow');
+                document.getElementById('smenu').classList.remove('smhide');
+            }
+            function hidesmenu() {
+                document.getElementById('showsmenu').style.display = "block";
+                document.getElementById('hidesmenu').style.display = "none";
+                document.getElementById('smenu').classList.remove('smshow');
+                document.getElementById('smenu').classList.add('smhide');
+            }
+        </script>
+
+        <!-- Check cookie "kernel_panic" -->
+        <script>
+            function kernel_panic_check() {
+                var kernel_panic = document.cookie.replace(/(?:(?:^|.*;\s*)kernel_panic\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                if (kernel_panic == "1") {//if cookie "kernel_panic" == 1 than redirect to page
+                    window.location.replace("desktop/wjigemk_kernel_panic.html");//redirect to kernel panic page
+                }
+            }
+            document.addEventListener("DOMContentLoaded", kernel_panic_check);
+        </script>
+    
+        <div id="toppanel">
+            <a class="sbutton" id="showsmenu" onclick="showsmenu()">
+                <img class="sbutton__img" src="images/logoicon.png" alt="logo">
+            </a>
+            <a class="sbutton" style="display: none;" id="hidesmenu" onclick="hidesmenu()">
+                <img class="sbutton__img" src="images/logoicon.png" alt="logo">
+            </a>
+            <a class="time-sb" id="time"></a>
+            <div class="sb_r">
+                <span class="material-symbols-outlined">
+                    signal_cellular_nodata
+                </span>
+                <span class="material-symbols-outlined">
+                    signal_wifi_4_bar
+                </span>
+                <span class="material-symbols-outlined">
+                    battery_charging_full
                 </span>
             </div>
         </div>
-        <!-- Terminal system -->
-        <script src="js/terminal_system.js"></script>
-        <!-- Terminal input -->
-        <p style="color: white;user-select: none;-webkit-user-select: none;-webkit-user-drag: none;margin-top: 5px;margin-bottom: 5px;" id="terminal_input">
-            [us3r@d3adc0reos]: $ <input autofocus style="font-family: PixelOperatorBold; font-size: 1rem; color: white; outline: none; border: none; background: none; width: 21rem;" type="text" name="" maxlength="42" id="terminal-input" onkeydown="terminal_check(this)">
-        </p>
-        
-        <p id="terminal_output" style="color:white; margin-top: -0.5rem; margin-left: 0.1rem;"></p>
 
-    </div>
+        <script>
+            function changetime() {
+                const date = new Date();
+                document.getElementById('time').innerHTML = date.toLocaleTimeString('ru-RU');
+            }                                  //by Purpl3
+            changetime()
+            setInterval(function () {
+                changetime();
+            },1000)
+        </script>
 
-    <div id="appwindow_justice" class="appwindow appwindow_hidden">
-        <div id="topbar_window_justice" onmouseenter="topbar_enter_justice()" onmouseleave="topbar_leave_justice()" style="z-index: 10;">
-            <div class="appname_window" style="user-select: none;">
-                Just Ice
-            </div>
-            <div class="closebtn_window_justice" onclick="close_window_justice()">
-                <span style="cursor: pointer" class="material-symbols-outlined">
-                    close
+        <!-- Menu -->
+        <div id="smenu" class="smhide">
+            <p class="menuuser" title="Default live user">
+                <span class="material-symbols-outlined">
+                    person
                 </span>
+                <p style="font-family: PixelOperatorBold; margin-top: -2.67rem; margin-left: 2.5rem;">
+                    Us3r
+                </p>
+            </p>
+            <p class="actionbuttons">
+                <span style="cursor: pointer" title="Restart" onclick="restart_confirm_dialog()" class="material-symbols-outlined rebbutton">
+                    restart_alt
+                </span>  
+            </p>
+
+            <div class="sgmb"></div>
+            <div id="pinneddiv">
+                <p style="padding-top: 0.32rem;" onclick="hidesmenu(); setTimeout(function () { open_window_terminal(this) }, 500);">
+                    <img class="appicon" src="images/terminal_ic.png" alt="terminal">
+                    <p style="margin-top: -3.3rem" class="appname_smpd">T3rm1nal</p>
+                </p>
+                <p style="margin-top: 0rem; margin-bottom: 0.1rem;" onclick="hidesmenu(); setTimeout(function () { open_window_settings(this) }, 500);">
+                    <img class="appicon" src="images/settings_ic.png" alt="settings">
+                    <p class="appname_smpd">Settings</p>
+                </p>
+                <p style="margin-top: 0rem; margin-bottom: 0.2rem;" onclick="hidesmenu(); setTimeout(function () { open_window_justice(this) }, 1500);">
+                    <img class="appicon" src="images/justice_ic.png" alt="justice">
+                    <p class="appname_smpd">Just Ice</p>
+                </p>
             </div>
         </div>
-        <iframe frameborder='0' id="iframe_justice" src="apps/JustIce/preload.html" style="z-index: -1;"></iframe>
-    </div>
 
-    <div id="appwindow_settings" class="appwindow appwindow_hidden">
-        <div id="topbar_window_settings" onmouseenter="topbar_enter_settings()" onmouseleave="topbar_leave_settings()">
-            <div class="appname_window" style="user-select: none;">
-                Settings
+        <!-- Windows scripts -->
+        <script src="js/windows_drag.js"></script>
+        <script src="js/windows_actions.js"></script>
+    
+        <div id="appwindow_terminal" class="appwindow appwindow_hidden">
+            <div id="topbar_window" onmouseenter="topbar_enter()" onmouseleave="topbar_leave()">
+                <div class="appname_window" style="user-select: none;" id="topbar_window_terminal">
+                    T3rm1nal - [us3r@d3adc0reos]: $
+                </div>
+                <div class="closebtn_window" onclick="close_window_terminal()">
+                    <span style="cursor: pointer" class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
             </div>
-            <div class="closebtn_window_settings" onclick="close_window_settings()">
-                <span style="cursor: pointer" class="material-symbols-outlined">
-                    close
-                </span>
+            <!-- Terminal system -->
+            <script src="js/terminal_system.js"></script>
+            <!-- Terminal input -->
+            <p style="color: white;user-select: none;-webkit-user-select: none;-webkit-user-drag: none;margin-top: 5px;margin-bottom: 5px;" id="terminal_input">
+                [us3r@d3adc0reos]: $ <input autofocus style="font-family: PixelOperatorBold; font-size: 1rem; color: white; outline: none; border: none; background: none; width: 21rem;" type="text" name="" maxlength="42" id="terminal-input" onkeydown="terminal_check(this)">
+            </p>
+            
+            <p id="terminal_output" style="color:white; margin-top: -0.5rem; margin-left: 0.1rem;"></p>
+        </div>
+
+        <div id="appwindow_justice" class="appwindow appwindow_hidden">
+            <div id="topbar_window_justice" onmouseenter="topbar_enter_justice()" onmouseleave="topbar_leave_justice()" style="z-index: 10;">
+                <div class="appname_window" style="user-select: none;">
+                    Just Ice
+                </div>
+                <div class="closebtn_window_justice" onclick="close_window_justice()">
+                    <span style="cursor: pointer" class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+            </div>
+            <iframe frameborder='0' id="iframe_justice" src="apps/JustIce/preload.html" style="z-index: -1;"></iframe>
+        </div>
+
+        <div id="appwindow_settings" class="appwindow appwindow_hidden">
+            <div id="topbar_window_settings" onmouseenter="topbar_enter_settings()" onmouseleave="topbar_leave_settings()">
+                <div class="appname_window_settings" style="user-select: none;">
+                    Settings
+                </div>
+                <div class="closebtn_window_settings" onclick="close_window_settings()">
+                    <span style="cursor: pointer" class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+            </div>
+            <div id="settings_elems">
+                <script src="/js/settings.js"></script>
+                <div class="settings_element_default">
+                    <span style="cursor: pointer" class="material-symbols-outlined">
+                        info
+                    </span>
+                    <p>About OS</p>
+                </div>
+                <div class="settings_element_thin">
+                    <p>GitHub</p>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

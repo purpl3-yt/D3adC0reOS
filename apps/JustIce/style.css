@@ -1,24 +1,19 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    margin: 0;
-    min-height: 100vh;
-    overflow: hidden;
-    
-    background:
-    repeating-radial-gradient(
-    circle at center,
-      #444 0 10%,
-      #111 10% 20%
-    );
-    
-    touch-action: none;
-  }
-  
-  canvas {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
+* {box-sizing: border-box;}
+
+canvas{width: 100%;height: auto;object-fit: contain;}
+.animtrue {
+  background: repeating-radial-gradient(circle at center, #444 0% 10%, #1115 40% 100%);
+  transition: 1s;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  touch-action: none;
+}
+.animfalse {
+  background: repeating-radial-gradient(circle at center, #444 0% 10%, #1115 15% 15%);
+  transition: 1s;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  touch-action: none;
+}
