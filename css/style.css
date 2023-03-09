@@ -33,9 +33,10 @@ body {
 }
 
 #toppanel {
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(39, 39, 39, 0.2);
+    backdrop-filter: blur(0.7rem);
     padding: 0.2rem;
-    height: 1.6rem;
+    height: 1.9rem;
     color: white;
     text-align: center;
     user-select: none;
@@ -51,13 +52,19 @@ body {
 
 .sbutton {
     float: left;
-    margin-top: 0.17rem;
+    margin-top: 0.05rem;
     margin-left: 0.17rem;
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
     cursor: pointer;
     transition: 0.1s;
+    background-color: rgba(39, 39, 39, 0.7);
+    width: 1.2rem;
+    padding: 0.3rem;
+    padding-top: 0.3rem;
+    border-radius: 0.5rem;
+    padding-bottom: 0.1rem;
 }
 
 .sbutton:active {
@@ -72,16 +79,28 @@ body {
 }
 
 .time-sb {
-    float: right;
-    margin-left: 0.6rem;
-    margin-right: 0.2rem;
-    margin-top: 0.2rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.05rem;
+    background-color: rgba(39, 39, 39, 0.7);
+    width: 4.5rem;
+    padding: 0.4rem;
+    padding-top: 0.3rem;
+    border-radius: 0.5rem;
 }
 
 .sb_r {
     float: right;
     transform: scale(0.7);
-    margin-right: -0.6rem;
+    margin-right: -1rem;
+    margin-top: -3.15rem;
+    background-color: rgba(39, 39, 39, 0.7);
+    width: 6rem;
+    padding: 0.4rem;
+    padding-top: 0.5rem;
+    border-radius: 0.7rem;
+    padding-bottom: 0.3rem;
 }
 
 #smenu {
@@ -142,17 +161,13 @@ body {
     background-color: rgba(255, 255, 255, 0.03);
     padding: 0.2rem;
     border-radius: 8rem;
-    transition: 0.23s;
+    transition: 0.5s;
 }
-
 .rebbutton:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    transform: scale(1.1);
+    transform: rotate(-360deg);
 }
-
 .rebbutton:active {
-    background-color: rgba(255, 255, 255, 0.03);
-    transform: scale(1);
+    transform: rotate(-720deg);
 }
 
 #pinneddiv {
@@ -308,7 +323,7 @@ body {
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
-    transform: scale(0.4);
+    transform: scale(0.35);
     margin-top: -1.7rem;
     margin-right: -0.3rem;
 }
@@ -331,7 +346,7 @@ body {
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
-    transform: scale(0.4);
+    transform: scale(0.35);
     margin-top: -2.4rem;
     margin-right: -8rem;
 }

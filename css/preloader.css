@@ -2,15 +2,15 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  margin-top: -22px;
+  top: 0;
+  bottom: 0;
   display: flex;
   visibility: visible;
   align-items: center;
   justify-content: center;
-  background: rgba(39, 39, 39, 0.7);
-  backdrop-filter: blur(0.7rem);
-  z-index: 100;
-  transition: 0.3s opacity;
+  background: rgb(0, 0, 0);
+  z-index: 10000000000;
+  transition: 0.3s;
   opacity: 1;
 }
 
@@ -35,13 +35,12 @@
   transition: 0.3s;
   transition-property: opacity, backdrop-filter, background;
   opacity: 0;
-  background: rgba(39, 39, 39, 0);
-  backdrop-filter: blur(0rem);
+  background: rgb(0, 0, 0);
 }
 
 .loaded .preloader {
   transition: 0.3s;
-  transition-property: opacity, backdrop-filter, visibility;
+  transition-property: opacity, visibility;
   visibility: hidden;
   opacity: 0;
 }

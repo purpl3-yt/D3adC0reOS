@@ -6,10 +6,11 @@ function getCookie(name) {
 }
 
 const changelog = {
-    "Changelog for D3adC0re OS v.0.2:": "!",
-    "Added some blank menus in Settings app": "1",
+    "Changelog for D3adC0re OS v.0.3:": "!",
+    "Added blank Wallpaper menu in Settings app": "1",
     "Optimized OS": "2",
-    "Disabled online services": "3",
-    "Fixed bugs, caused by wrong files paths": "4",
-    "Added confirmation screen for restart": "5",
+    "Kinda changed design": "3",
+    "Maked neofetch better": "4",
+    "Added 'komaru' command": "5",
+    "Preloader remake": "6"
 }

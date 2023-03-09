@@ -31,14 +31,14 @@ function terminal_check(ele) {
             "sudo": "execute a command as superuser",
             "math": "calculate expressions",
             "neofetch": "system info",
+            "dsettings": "open system preferences",
             "clear": "clear cmd",
             "exit": "close terminal",
             "user": "change user",
             "skibididop": "u know it",
+            "komaru": "showing cute komaru gif",
             "justice": "open Just Ice app",
-            "settings": "open system preferences",
-            "changelog": "print all changes for last version"
-        
+            "changelog": "print all changes for last version",
         };
         //Define output tag
         output = document.getElementById("terminal_output")
@@ -97,7 +97,7 @@ function terminal_check(ele) {
             args = get_args(ele.value)
 
             if (args.length == 0) {
-                print('Enter an number 1!');
+                print('Enter first number!');
                 return null;
             }
 
@@ -108,7 +108,7 @@ function terminal_check(ele) {
             
             //if number 2 is nothing aka "== None"
             if (args[2] == undefined) {
-                print("Enter an number 2!");
+                print("Enter second number!");
                 return null;
             }
 
@@ -141,7 +141,11 @@ function terminal_check(ele) {
             print('<img style="width: 31.8rem; margin-top: 0.5rem;height: 20.4rem; border-radius: 10px; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -moz-user-drag: none;pointer-events:none;" src="images/skibidi-bop-bop-yes-yes.gif">')
         }
 
-        else if (command('settings')) {
+        else if (command("komaru")) {
+            print('<img style="width: 16rem; margin-top: 0.5rem;height: 20.4rem; border-radius: 10px; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; -moz-user-drag: none;pointer-events:none;" src="images/komaru-cat.gif">')
+        }
+
+        else if (command('dsettings')) {
             setTimeout(() => {  open_window_settings(); }, 500);
             print('Successfully launched system preferences.');
             ele.value = '';
